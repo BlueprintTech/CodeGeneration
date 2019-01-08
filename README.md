@@ -1,5 +1,7 @@
 # CodeGeneration
 
+[![Build Status](https://dev.azure.com/BlueprintTech/Code%20Generation/_apis/build/status/BlueprintTech.CodeGeneration?branchName=master)](https://dev.azure.com/BlueprintTech/Code%20Generation/_build/latest?definitionId=1?branchName=master)
+
 Various static helpers to assist with runtime generation of type-safe C# code. The helpers wrap the `Microsoft.CodeAnalysis.CSharp.SyntaxFactory` class provided by Roslyn.
 
 This is still an early release of an internal helper tool so there might be some inconsistencies or improvements to be made.
