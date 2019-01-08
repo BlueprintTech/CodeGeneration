@@ -2,7 +2,7 @@
 
 | --- | --- |
 | **Build**** | [![Build Status](https://dev.azure.com/BlueprintTech/Code%20Generation/_apis/build/status/BlueprintTech.CodeGeneration?branchName=master)](https://dev.azure.com/BlueprintTech/Code%20Generation/_build/latest?definitionId=1?branchName=master) |
-| **NuGet**** | [![nuget](https://img.shields.io/nuget/v/BlueprintTech.CodeGeneration.svg)](https://www.nuget.org/packages/BlueprintTech.CodeGeneration /)
+| **NuGet**** | [![nuget](https://img.shields.io/nuget/v/BlueprintTech.CodeGeneration.svg)](https://www.nuget.org/packages/BlueprintTech.CodeGeneration /) |
 
 Various static helpers to assist with runtime generation of type-safe C# code. The helpers wrap the `Microsoft.CodeAnalysis.CSharp.SyntaxFactory` class provided by Roslyn.
 
