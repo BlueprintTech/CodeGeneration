@@ -15,7 +15,11 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
-- script: dotnet pack --configuration $(buildConfiguration) --output $BUILD_ARTIFACTSTAGINGDIRECTORY
+- task: DotNetCoreCLI@2
+  inputs: 
+    command: 'pack'
+    configurationToPack: $(buildConfiguration)
+    projects:  'src/**/*.csproj'
   displayName: 'create nuget packages'
   
 - task: PublishBuildArtifacts@1
