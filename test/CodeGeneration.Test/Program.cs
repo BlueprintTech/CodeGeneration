@@ -1,9 +1,7 @@
-﻿using System;
-using System.IO;
-using BlueprintTech.CodeGeneration;
+﻿using System.IO;
 using Microsoft.CodeAnalysis.CSharp;
 
-namespace CodeGeneration.Test
+namespace BlueprintTech.CodeGeneration.Test
 {
     class Program
     {
