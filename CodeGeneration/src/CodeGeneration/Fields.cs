@@ -1,9 +1,8 @@
 ﻿using System;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
-namespace Shared.CodeGeneration
+namespace BlueprintTech.CodeGeneration
 {
     public static class Fields
     {
@@ -16,16 +15,16 @@ namespace Shared.CodeGeneration
         {
             var typeDefinition = Types.Type(type);
 
-            return FieldDeclaration(
-                VariableDeclaration(typeDefinition)
+            return SyntaxFactory.FieldDeclaration(
+                SyntaxFactory.VariableDeclaration(typeDefinition)
                     .WithVariables(
-                                SingletonSeparatedList<VariableDeclaratorSyntax>(
-                                    VariableDeclarator(
-                                            Identifier(name))
+                                SyntaxFactory.SingletonSeparatedList<VariableDeclaratorSyntax>(
+                                    SyntaxFactory.VariableDeclarator(
+                                            SyntaxFactory.Identifier(name))
                                         .WithInitializer(
-                                            EqualsValueClause(initialValue)))))
+                                            SyntaxFactory.EqualsValueClause(initialValue)))))
                     .WithModifiers(
-                        TokenList(modifiers.AsList())
+                        SyntaxFactory.TokenList(modifiers.AsList())
             );
         }
     }

@@ -8,7 +8,7 @@ using Microsoft.CodeAnalysis.CSharp.Formatting;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Formatting;
 
-namespace Shared.CodeGeneration
+namespace BlueprintTech.CodeGeneration
 {
     public static partial class Constructs
     {
@@ -203,28 +203,6 @@ namespace Shared.CodeGeneration
 
         private static UsingDirectiveSyntax Using(string fullyQualifiedNamespace, string withinNamespace)
         {
-            //var splits = withinNamespace.Split(new string[] { "." }, StringSplitOptions.RemoveEmptyEntries).ToList();
-
-            //while (splits.Count > 0)
-            //{
-            //    if (fullyQualifiedNamespace.StartsWith(splits[0]))
-            //    {
-            //        // +1 for the .
-            //        var length = splits[0].Length + 1;
-            //        fullyQualifiedNamespace = fullyQualifiedNamespace.Substring(length, fullyQualifiedNamespace.Length - length);
-            //        splits.RemoveAt(0);
-            //    }
-            //    else
-            //    {
-            //        break;
-            //    }
-            //}
-
-            //fullyQualifiedNamespace = fullyQualifiedNamespace.Trim();
-
-            //if (fullyQualifiedNamespace.EndsWith("."))
-            //    fullyQualifiedNamespace = fullyQualifiedNamespace.Substring(0, fullyQualifiedNamespace.Length - 1);
-
             if (string.IsNullOrEmpty(fullyQualifiedNamespace) || fullyQualifiedNamespace.EndsWith("."))
                 return null;
 

@@ -3,9 +3,8 @@ using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
-namespace Shared.CodeGeneration
+namespace BlueprintTech.CodeGeneration
 {
     public static class Collections
     {
@@ -23,10 +22,10 @@ namespace Shared.CodeGeneration
                 }
             }
 
-            return ImplicitArrayCreationExpression(
-                InitializerExpression(
+            return SyntaxFactory.ImplicitArrayCreationExpression(
+                SyntaxFactory.InitializerExpression(
                     SyntaxKind.ArrayInitializerExpression,
-                    SeparatedList<ExpressionSyntax>(withCommas)));
+                    SyntaxFactory.SeparatedList<ExpressionSyntax>(withCommas)));
         }
 
         public static ObjectCreationExpressionSyntax InstantiateDictionary(TypeSyntax keyType, TypeSyntax valueType, IEnumerable<ExpressionSyntax> expressions)
@@ -43,14 +42,14 @@ namespace Shared.CodeGeneration
                 }
             }
 
-            var initializer = InitializerExpression(SyntaxKind.CollectionInitializerExpression, SeparatedList<ExpressionSyntax>(withCommas));
+            var initializer = SyntaxFactory.InitializerExpression(SyntaxKind.CollectionInitializerExpression, SyntaxFactory.SeparatedList<ExpressionSyntax>(withCommas));
 
-            return ObjectCreationExpression(
-                    GenericName(
-                            Identifier("Dictionary"))
+            return SyntaxFactory.ObjectCreationExpression(
+                    SyntaxFactory.GenericName(
+                            SyntaxFactory.Identifier("Dictionary"))
                         .WithTypeArgumentList(
-                            TypeArgumentList(
-                                SeparatedList<TypeSyntax>(
+                            SyntaxFactory.TypeArgumentList(
+                                SyntaxFactory.SeparatedList<TypeSyntax>(
                                     new SyntaxNodeOrToken[]
                                     {
                                         keyType,
@@ -62,9 +61,9 @@ namespace Shared.CodeGeneration
 
         public static InitializerExpressionSyntax KeyValuePairInitializer(ExpressionSyntax key, ExpressionSyntax value)
         {
-            return InitializerExpression(
+            return SyntaxFactory.InitializerExpression(
                 SyntaxKind.ComplexElementInitializerExpression,
-                SeparatedList<ExpressionSyntax>(
+                SyntaxFactory.SeparatedList<ExpressionSyntax>(
                     new SyntaxNodeOrToken[]
                     {
                         key,

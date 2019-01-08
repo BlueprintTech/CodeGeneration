@@ -4,7 +4,7 @@ using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 
-namespace Shared.CodeGeneration
+namespace BlueprintTech.CodeGeneration
 {
     public static class Tokens
     {

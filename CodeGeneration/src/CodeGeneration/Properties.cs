@@ -4,7 +4,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace Shared.CodeGeneration
+namespace BlueprintTech.CodeGeneration
 {
     public static class Properties
     {
