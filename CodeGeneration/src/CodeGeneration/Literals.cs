@@ -15,6 +15,11 @@ namespace BlueprintTech.CodeGeneration
             return SyntaxFactory.LiteralExpression(SyntaxKind.StringLiteralExpression, SyntaxFactory.Literal(text));
         }
 
+        public static ExpressionSyntax AsLiteral(this string text)
+        {
+            return SyntaxFactory.LiteralExpression(SyntaxKind.StringLiteralExpression, SyntaxFactory.Literal(text));
+        }
+
         public static ExpressionSyntax StringEmpty()
         {
             return Invocations.InvokeProperty("string", "Empty");
