@@ -28,7 +28,10 @@ namespace BlueprintTech.CodeGeneration
 
         public static SyntaxTokenList PrivateModifier => List(Private);
 
+        public static SyntaxTokenList StaticModifier => List(Static);
+
         public static SyntaxTokenList AsyncModifier => List(Async);
+
         public static SyntaxTokenList ParamsModifier => List(Params);
 
         public static SyntaxToken Dot => SyntaxFactory.Token(SyntaxKind.DotToken);
